@@ -30,8 +30,15 @@ if (symbol) characters += symbols;
 
 if(characters === ""){
     document.getElementById("empty").style.display = "block";
-    return
+} else {
+    document.getElementById('empty').style.display = 'none'
 }
+if(characters === ""){
+    document.getElementById("empty").style.display = "block";
+} else {
+    document.getElementById('empty').style.display = 'none'
+}
+
     
 
 let password = "";
@@ -47,3 +54,5 @@ function copybutton(){
     document.execCommand('copy');
     alert('copy to clipboard');
 }
+
+
