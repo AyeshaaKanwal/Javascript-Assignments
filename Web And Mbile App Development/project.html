@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        text-align: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      option{
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <select name="car" id="company" onchange="selectcompany()">
+        <option selected>select the company</option>
+      </select>
+    </div>
+
+    <br />
+    <br />
+    <div>
+      <select name="model" id="model">
+        <option selected>select the model</option>
+      </select>
+    </div>
+
+    <br />
+    <br />
+    <button onclick="searchCar()">Search</button>
+
+    <script>
+      const cars = {
+        honda: {
+          civic1: {
+            name: "civic",
+            Price: "2200933",
+            colors: ["red", "black", "white"],
+            model: 2022,
+            img: "../honda.city",
+          },
+
+          civic2: {
+            name: "civic",
+            Price: "2200933",
+            colors: ["red", "black", "white"],
+            model: 2023,
+            img: "../honda.city",
+          },
+        },
+        mira: {
+          mira1: {
+            name: "civic",
+            Price: "2200933",
+            colors: ["red", "black", "white"],
+            model: 2022,
+            img: "../honda.city",
+          },
+
+          mira2: {
+            name: "civic",
+            Price: "2200933",
+            colors: ["red", "black", "white"],
+            model: 2022,
+            img: "../honda.city",
+          },
+        },
+        wegonr: {
+          corolla1: {
+            name: "civic",
+            Price: "2200933",
+            colors: ["red", "black", "white"],
+            model: 2022,
+            img: "../honda.city",
+          },
+
+
+          corolla2: {
+            name: "civic",
+            Price: "2200933",
+            colors: ["red", "black", "white"],
+            model: 2022,
+            img: "../honda.city",
+          },
+        },
+      };
+
+      let company = document.getElementById('company');
+      let model = document.getElementById('model');
+      console.log(company, model);
+      for (let key in cars){
+        company.innerHTML += `<option value= "${key}"> ${key} </option>`
+      }
+      console.log(cars[company.innerHTML])
+
+
+       const selectcompany = () => {
+        model.innerHTML = "";
+        for (let key in cars [company.value]){
+          model.innerHTML += `<option value = "${key}"> ${key} </option>`
+        }
+       
+       }
+  
+    </script>
+  </body>
+</html>
